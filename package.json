@@ -1,0 +1,24 @@
+{
+  "name": "newsletter-signup",
+  "version": "1.0.0",
+  "description": "This is a sign up page for a news letter. Created with node and deployed to Heroku. User enters their first name, last name, and email to receive newsletters. When user submits their information, they are shown a success/failure page to display the status of their submition.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedAlkh/newsletter-signup.git"
+  },
+  "author": "Ahmed Alkhatib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhmedAlkh/newsletter-signup/issues"
+  },
+  "homepage": "https://github.com/AhmedAlkh/newsletter-signup#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "request": "^2.88.2"
+  }
+}
