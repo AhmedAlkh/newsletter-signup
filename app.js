@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
+const https = require("https");
 
 const app = express();
 
@@ -31,6 +32,22 @@ app.post("/", function(req, res){
 
     const jsonData = JSON.stringify(data);
 
+    const url = "https://us13.api.mailchimp.com/3.0/lists/75ee20ace1";
+
+    const options = {
+        method: "POST",
+        auth: "ahmed1:a52a1eec1fc2d0a5cd376f846d83a9e5-us13"
+    }
+
+    const request = https.request(url, options, function(response) {
+        response.on("data", function(data){
+            console.log(JSON.parse(data));
+        })
+    })
+
+    request.write(jsonData);
+    request.end();
+
 });
 
 app.listen(3000, function(){
@@ -39,6 +56,7 @@ app.listen(3000, function(){
 
 // API key
 // 38e909eee0d879f3111e1d0ba4ecdb69-us13
+// this one is active! a52a1eec1fc2d0a5cd376f846d83a9e5-us13
 
 // List id
 // 75ee20ace1
